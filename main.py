@@ -10,7 +10,7 @@ import uvicorn
 
 app = FastAPI()
 
-# загрузка предварительно обученной модели ResNet50 из TensorFlow
+# обученной модели ResNet50 из TensorFlow
 model = tf.keras.applications.ResNet50(weights='imagenet')
 
 @app.get("/")
