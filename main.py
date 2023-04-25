@@ -13,13 +13,13 @@ app = FastAPI()
 # загрузка предварительно обученной модели ResNet50 из TensorFlow
 model = tf.keras.applications.ResNet50(weights='imagenet')
 
-@app.get("/")
+  @app.get("/")
 async def main():
     with open("main.html") as f:
         html = f.read()
     return HTMLResponse(content=html, status_code=200)
 
-@app.post("/predict")
+  @app.post("/predict")
 async def predict(file: UploadFile):
     # чтение загруженного изображения и преобразование его в формат PIL.Image
     content = await file.read()
